@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <!-- Page Loader -->
+    <div class="loader">
+        <div class="loader-text">
+            <!-- Loader text injected by content.js -->
+        </div>
+        <div class="loader-progress-wrap">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo hover-target"></a>
+            <div class="nav-links desktop-nav">
+                <!-- Nav links injected by content.js -->
+            </div>
+            <button class="hamburger hover-target" aria-label="Toggle Menu">
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <!-- Mobile links injected by content.js -->
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg-text-container">
+            <h1 class="hero-bg-text"></h1>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-tag pill hover-target"></div>
+            <h2 class="hero-heading-small reveal-up"></h2>
+            <h1 class="hero-heading-main reveal-up"></h1>
+            <h3 class="hero-heading-sub reveal-up"></h3>
+            <p class="hero-subtext reveal-up"></p>
+            
+            <div class="hero-cta reveal-up">
+                <!-- CTA buttons injected by content.js -->
+            </div>
+        </div>
+
+        <div class="hero-bottom-left">
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+            </div>
+            <span class="scroll-label"></span>
+        </div>
+
+        <div class="hero-socials">
+            <!-- Socials injected by content.js -->
+        </div>
+    </header>
+
+    <!-- Marquee Strip -->
+    <div class="marquee-wrapper">
+        <div class="marquee hover-target">
+            <div class="marquee-content">
+                <!-- Marquee content injected by content.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container about-grid">
+            <div class="about-image-col reveal-left">
+                <div class="about-image-wrapper">
+                    <!-- Image and location injected by content.js -->
+                </div>
+            </div>
+            <div class="about-text-col reveal-right">
+                <h2 class="section-title"></h2>
+                <div class="about-bio"></div>
+                <div class="about-stats"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work section-padding" id="work">
+        <div class="container">
+            <h2 class="section-title text-center reveal-up"></h2>
+            <div class="work-grid">
+                <!-- Work cards injected by content.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section-padding" id="skills">
+        <div class="container skills-grid">
+            <div class="skills-text reveal-left">
+                <h2 class="section-title"></h2>
+                <p></p>
+                <div class="tool-chips">
+                    <!-- Tool chips injected by content.js -->
+                </div>
+            </div>
+            <div class="skills-bars reveal-right">
+                <!-- Skill bars injected by content.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote section-padding">
+        <div class="container text-center reveal-up">
+            <span class="quote-mark">"</span>
+            <blockquote class="main-quote"></blockquote>
+            <cite class="quote-author"></cite>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal-up"></h2>
+            <div class="contact-grid">
+                <!-- Contact cards injected by content.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <a href="#" class="logo footer-logo hover-target"></a>
+                <div class="footer-links">
+                    <!-- Links injected by content.js -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="content.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box" id="modalBox">
+        <button class="modal-close" id="modalClose">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="1" y1="1" x2="19" y2="19" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="19" y1="1" x2="1" y2="19" stroke="black" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="modal-num" id="modalNum">01</div>
+        <h2 class="modal-title" id="modalTitle">Title</h2>
+        <div class="modal-divider"></div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+</body>
+</html>
