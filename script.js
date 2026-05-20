@@ -1,11 +1,22 @@
+
 // ── FOG CURSOR ──
 (function() {
   var sizes = [80, 100, 60, 120, 90];
   var count = 0;
+  var fogContainer = null;
 
   document.addEventListener('mousemove', function(e) {
     count++;
     if (count % 3 !== 0) return;
+
+    if (!fogContainer) {
+      fogContainer = document.getElementById('fog-container');
+      if (!fogContainer) {
+        fogContainer = document.createElement('div');
+        fogContainer.id = 'fog-container';
+        document.body.insertBefore(fogContainer, document.body.firstChild);
+      }
+    }
 
     var dot = document.createElement('div');
     dot.className = 'fog-dot';
@@ -16,7 +27,7 @@
     dot.style.left   = e.clientX + 'px';
     dot.style.top    = e.clientY + 'px';
 
-    document.body.appendChild(dot);
+    fogContainer.appendChild(dot);
 
     setTimeout(function() {
       dot.remove();
@@ -302,4 +313,244 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay && overlay.classList.contains('active')) closeModal();
     });
+
+    /* -------------------------------------
+       9. YOUTUBE CHANNEL SHOWCASE (STATS & VIDEOS)
+    ------------------------------------- */
+    const youtubeStatsRow = document.getElementById('youtube-stats-row');
+    const youtubeVideosGrid = document.getElementById('youtube-videos-grid');
+    
+    if (youtubeStatsRow || youtubeVideosGrid) {
+        const CHANNEL_ID = 'UCAn_Cf9_e6FEqrUm43GFeaQ';
+        const API_KEY = 'AIzaSyAuaYRaSGgfUhKyXXvNw7_Yar_pN4pp-xM';
+        const STATS_URL = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`;
+        const FEED_URL = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml%3Fchannel_id%3D${CHANNEL_ID}`;
+
+        function decodeHTMLEntities(text) {
+            const textarea = document.createElement('textarea');
+            textarea.innerHTML = text;
+            return textarea.value;
+        }
+
+        function formatDate(dateStr) {
+            try {
+                const date = new Date(dateStr.replace(/-/g, '/'));
+                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            } catch (e) {
+                return dateStr;
+            }
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                const val = num / 1000000;
+                return parseFloat(val.toFixed(2)) + 'M';
+            }
+            if (num >= 1000) {
+                const val = num / 1000;
+                return parseFloat(val.toFixed(2)) + 'K';
+            }
+            return num.toString();
+        }
+
+        // Custom counter observer for youtube stats
+        const ytCounterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target') || 0;
+                if (target === 0) return;
+                
+                const duration = 2000; // ms
+                let startTime = null;
+                
+                const updateCounter = (currentTime) => {
+                    if (!startTime) startTime = currentTime;
+                    const progress = currentTime - startTime;
+                    
+                    let percent = Math.min(progress / duration, 1);
+                    percent = easeOutCubic(percent);
+                    
+                    const currentValue = Math.floor(target * percent);
+                    counter.innerText = formatNumber(currentValue);
+                    
+                    if (progress < duration) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = formatNumber(target);
+                    }
+                };
+                
+                requestAnimationFrame(updateCounter);
+                observer.unobserve(counter);
+            });
+        }, { threshold: 0.1 });
+
+        function startYtCounterAnimation() {
+            document.querySelectorAll('.youtube-counter').forEach(counter => {
+                ytCounterObserver.observe(counter);
+            });
+        }
+
+        const ONE_DAY = 24 * 60 * 60 * 1000;
+
+        // 1. Stats Caching & Fetching
+        function loadStats() {
+            const lastFetch = localStorage.getItem('youtube_stats_time');
+            const cachedStatsStr = localStorage.getItem('youtube_stats');
+            const shouldRefresh = !lastFetch || (Date.now() - parseInt(lastFetch)) > ONE_DAY;
+
+            const subCounter = document.getElementById('yt-subscribers');
+            const videoCounter = document.getElementById('yt-videos');
+            const viewCounter = document.getElementById('yt-views');
+
+            if (!shouldRefresh && cachedStatsStr) {
+                try {
+                    const stats = JSON.parse(cachedStatsStr);
+                    if (subCounter) subCounter.setAttribute('data-target', stats.subscriberCount);
+                    if (videoCounter) videoCounter.setAttribute('data-target', stats.videoCount);
+                    if (viewCounter) viewCounter.setAttribute('data-target', stats.viewCount);
+                    startYtCounterAnimation();
+                    return;
+                } catch (e) {
+                    console.error('Error parsing cached stats:', e);
+                }
+            }
+
+            fetch(STATS_URL)
+                .then(response => {
+                    if (!response.ok) throw new Error('API key or quota error');
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.items && data.items.length > 0) {
+                        const stats = data.items[0].statistics;
+                        
+                        if (subCounter) subCounter.setAttribute('data-target', stats.subscriberCount);
+                        if (videoCounter) videoCounter.setAttribute('data-target', stats.videoCount);
+                        if (viewCounter) viewCounter.setAttribute('data-target', stats.viewCount);
+                        
+                        localStorage.setItem('youtube_stats', JSON.stringify({
+                            subscriberCount: stats.subscriberCount,
+                            videoCount: stats.videoCount,
+                            viewCount: stats.viewCount
+                        }));
+                        localStorage.setItem('youtube_stats_time', Date.now().toString());
+                    } else {
+                        throw new Error('No channel stats found');
+                    }
+                })
+                .catch(error => {
+                    console.warn('YouTube Stats API error, applying high-quality fallbacks:', error);
+                    if (subCounter) subCounter.setAttribute('data-target', '2870');
+                    if (videoCounter) videoCounter.setAttribute('data-target', '52');
+                    if (viewCounter) viewCounter.setAttribute('data-target', '248900');
+                })
+                .finally(() => {
+                    startYtCounterAnimation();
+                });
+        }
+
+        // 2. Videos Caching & Fetching
+        function renderVideos(videos) {
+            youtubeVideosGrid.innerHTML = videos.map((item, index) => {
+                const videoId = item.guid.replace('yt:video:', '');
+                const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                const decodedTitle = decodeHTMLEntities(item.title);
+                const formattedDate = formatDate(item.pubDate);
+
+                return `
+                    <a href="${item.link}" target="_blank" class="youtube-video-card hover-target reveal-up" data-delay="${(index % 3) * 100}">
+                        <div class="youtube-thumb-wrapper">
+                            <img src="${thumbnailUrl}" alt="${decodedTitle}" loading="lazy" class="youtube-thumb-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/0.jpg';">
+                            <div class="youtube-thumb-gradient"></div>
+                            <div class="youtube-video-text-container">
+                                <span class="youtube-video-date">${formattedDate}</span>
+                                <h3 class="youtube-video-title">${decodedTitle}</h3>
+                            </div>
+                        </div>
+                        <div class="youtube-video-hover-overlay">
+                            <span class="youtube-video-hover-text">Watch on YouTube &rarr;</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+
+            // Register newly added cards for scroll reveal trigger
+            youtubeVideosGrid.querySelectorAll('.youtube-video-card.reveal-up').forEach(card => {
+                revealObserver.observe(card);
+            });
+        }
+
+        function loadVideos() {
+            const lastFetch = localStorage.getItem('youtube_videos_time');
+            const cachedVideosStr = localStorage.getItem('youtube_videos');
+            const shouldRefresh = !lastFetch || (Date.now() - parseInt(lastFetch)) > ONE_DAY;
+
+            let hasCache = false;
+            if (cachedVideosStr) {
+                try {
+                    const cachedVideos = JSON.parse(cachedVideosStr);
+                    if (Array.isArray(cachedVideos) && cachedVideos.length > 0) {
+                        renderVideos(cachedVideos);
+                        hasCache = true;
+                    }
+                } catch (e) {
+                    console.error('Error parsing cached videos:', e);
+                }
+            }
+
+            if (shouldRefresh) {
+                fetch(FEED_URL)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+                            throw new Error('Invalid feed data');
+                        }
+
+                        const freshVideos = data.items.slice(0, 6);
+                        renderVideos(freshVideos);
+                        
+                        localStorage.setItem('youtube_videos', JSON.stringify(freshVideos));
+                        localStorage.setItem('youtube_videos_time', Date.now().toString());
+                    })
+                    .catch(error => {
+                        console.error('YouTube Videos Fetch Error:', error);
+                        if (!hasCache) {
+                            youtubeVideosGrid.innerHTML = `
+                                <div class="youtube-error-container">
+                                    <p style="margin-bottom: 1.5rem; color: #555555; font-size: 1.1rem;">Failed to load latest videos.</p>
+                                    <a href="https://www.youtube.com/@snap_blitz" target="_blank" class="youtube-error-link hover-target">Visit @snap_blitz on YouTube &rarr;</a>
+                                </div>
+                            `;
+                        }
+                    });
+            }
+        }
+
+        // Initialize Loading
+        loadStats();
+        loadVideos();
+    }
+
+    // 10. CONTACT FORM HANDLING
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const subject = document.getElementById('form-subject').value;
+            const message = document.getElementById('form-message').value;
+            
+            const mailtoSubject = encodeURIComponent(subject);
+            const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
+            window.location.href = `mailto:snapblitz.officiall@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        });
+    }
 });

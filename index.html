@@ -120,11 +120,96 @@
                 <h2 class="section-title"></h2>
                 <p></p>
                 <div class="tool-chips">
-                    <!-- Tool chips injected by content.js -->
+                    <a href="tools/adobe-premiere.html" target="_blank" rel="noopener" class="chip hover-target">Adobe Premiere</a>
+                    <a href="tools/after-effects.html" target="_blank" rel="noopener" class="chip hover-target">After Effects</a>
+                    <a href="tools/photoshop.html" target="_blank" rel="noopener" class="chip hover-target">Photoshop</a>
+                    <a href="tools/capcut.html" target="_blank" rel="noopener" class="chip hover-target">CapCut</a>
+                    <a href="tools/canva.html" target="_blank" rel="noopener" class="chip hover-target">Canva</a>
+                    <a href="tools/lightroom.html" target="_blank" rel="noopener" class="chip hover-target">Lightroom</a>
                 </div>
             </div>
             <div class="skills-bars reveal-right">
                 <!-- Skill bars injected by content.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section class="youtube section-padding" id="youtube">
+        <div class="container reveal-up">
+            <div class="youtube-header-row">
+                <div class="youtube-title-area">
+                    <span class="youtube-label">/ Latest Videos</span>
+                    <h2 class="section-title">Latest from <span class="italic-accent">YouTube</span></h2>
+                </div>
+            </div>
+            
+            <!-- Part 1: Channel Stats Row -->
+            <div class="youtube-stats-row" id="youtube-stats-row">
+                <!-- Card 1: Subscribers -->
+                <div class="youtube-stat-card reveal-up" data-delay="0">
+                    <div class="youtube-stat-content">
+                        <div class="youtube-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <span class="youtube-stat-number"><span class="youtube-counter" id="yt-subscribers" data-target="0">0</span></span>
+                        <span class="youtube-stat-label">Subscribers</span>
+                    </div>
+                </div>
+                <!-- Card 2: Videos -->
+                <div class="youtube-stat-card reveal-up" data-delay="100">
+                    <div class="youtube-stat-content">
+                        <div class="youtube-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                        </div>
+                        <span class="youtube-stat-number"><span class="youtube-counter" id="yt-videos" data-target="0">0</span></span>
+                        <span class="youtube-stat-label">Total Videos</span>
+                    </div>
+                </div>
+                <!-- Card 3: Views -->
+                <div class="youtube-stat-card reveal-up" data-delay="200">
+                    <div class="youtube-stat-content">
+                        <div class="youtube-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <span class="youtube-stat-number"><span class="youtube-counter" id="yt-views" data-target="0">0</span></span>
+                        <span class="youtube-stat-label">Total Views</span>
+                    </div>
+                </div>
+                <!-- Card 4: YouTube Link -->
+                <a href="https://www.youtube.com/@snap_blitz" target="_blank" class="youtube-stat-card hover-target reveal-up" data-delay="300">
+                    <div class="youtube-stat-content">
+                        <div class="youtube-stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <span class="youtube-stat-number">YOUTUBE</span>
+                        <span class="youtube-stat-label">Visit Channel</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Part 2: Latest Videos Grid -->
+            <div class="youtube-videos-grid" id="youtube-videos-grid">
+                <div class="youtube-skeleton-card"></div>
+                <div class="youtube-skeleton-card"></div>
+                <div class="youtube-skeleton-card"></div>
+                <div class="youtube-skeleton-card"></div>
+                <div class="youtube-skeleton-card"></div>
+                <div class="youtube-skeleton-card"></div>
             </div>
         </div>
     </section>
@@ -138,12 +223,273 @@
         </div>
     </section>
 
+    <!-- Platforms Section -->
+    <section class="platforms section-padding" id="platforms" aria-label="Adithyan M SnapBlitz Social Media Channels">
+        <div class="container reveal-up">
+            <div class="platforms-header text-center">
+                <span class="platforms-label">/ My Platforms</span>
+                <h2 class="section-title">My <span class="italic-accent">Channels</span></h2>
+                <p class="platforms-subtitle">Explore all content platforms of Adithyan M — SnapBlitz</p>
+            </div>
+            
+            <div class="platforms-grid">
+                <!-- Card 1: Main Instagram -->
+                <a href="https://www.instagram.com/snap_blitz" target="_blank" rel="noopener" class="platform-card hover-target reveal-up" data-delay="0" aria-label="SnapBlitz Instagram main channel by Adithyan M">
+                    <div class="platform-card-content">
+                        <div class="platform-card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-arrow" viewBox="0 0 24 24">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <span class="platform-card-label">Instagram</span>
+                        <h3 class="platform-card-title">SnapBlitz — @snap_blitz</h3>
+                        <div class="platform-card-tags">
+                            <span class="platform-card-tag">Tech</span>
+                            <span class="platform-card-tag">Gadgets</span>
+                            <span class="platform-card-tag">Unboxing</span>
+                            <span class="platform-card-tag">Reels</span>
+                        </div>
+                        <div class="platform-desc-wrapper">
+                            <p class="platform-desc">Adithyan M, known as SnapBlitz, shares in-depth tech content on this main Instagram page. This page is focused on smartphone reviews, gadget unboxings, mobile tips, secret apps, hidden Android features, tech product recommendations, and cinematic tech reels. If you love technology, smartphones, and digital gadgets, this is the primary SnapBlitz Instagram page to follow for the latest tech content from Kerala, India. Follow Adithyan M on Instagram at snap_blitz for daily tech content updates.</p>
+                        </div>
+                        <span class="platform-handle">@snap_blitz</span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Personal Instagram -->
+                <a href="https://www.instagram.com/snap_blitz_official" target="_blank" rel="noopener" class="platform-card hover-target reveal-up" data-delay="100" aria-label="SnapBlitz Official personal Instagram backup channel by Adithyan M">
+                    <div class="platform-card-content">
+                        <div class="platform-card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-arrow" viewBox="0 0 24 24">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <span class="platform-card-label">Instagram</span>
+                        <h3 class="platform-card-title">SnapBlitz Official — @snap_blitz_official</h3>
+                        <div class="platform-card-tags">
+                            <span class="platform-card-tag">Personal</span>
+                            <span class="platform-card-tag">Lifestyle</span>
+                            <span class="platform-card-tag">BTS</span>
+                            <span class="platform-card-tag">Blog</span>
+                        </div>
+                        <div class="platform-desc-wrapper">
+                            <p class="platform-desc">This is the official personal Instagram page of Adithyan M — SnapBlitz. This page features personal thoughts, lifestyle content, behind the scenes moments, day to day life as a content creator from Kerala, India, and collaborative posts with the main SnapBlitz channel. This page also serves as the verified backup account and is actively growing alongside the main channel with both shared and exclusive personal content from Adithyan M. Follow snap_blitz_official to see the personal side of SnapBlitz.</p>
+                        </div>
+                        <span class="platform-handle">@snap_blitz_official</span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Gaming Instagram -->
+                <a href="https://www.instagram.com/snap_blitz_gaming" target="_blank" rel="noopener" class="platform-card hover-target reveal-up" data-delay="200" aria-label="SnapBlitz Gaming discovery Instagram channel by Adithyan M">
+                    <div class="platform-card-content">
+                        <div class="platform-card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-arrow" viewBox="0 0 24 24">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <span class="platform-card-label">Instagram</span>
+                        <h3 class="platform-card-title">SnapBlitz Gaming — @snap_blitz_gaming</h3>
+                        <div class="platform-card-tags">
+                            <span class="platform-card-tag">Gaming</span>
+                            <span class="platform-card-tag">Android</span>
+                            <span class="platform-card-tag">PC</span>
+                            <span class="platform-card-tag">Multiplayer</span>
+                        </div>
+                        <div class="platform-desc-wrapper">
+                            <p class="platform-desc">SnapBlitz Gaming on Instagram is where Adithyan M introduces exciting games to his audience. This page is not a gameplay channel — it is a game discovery and recommendation page created by Adithyan M. New game releases, multiplayer games, horror games, fun mobile games for Android and iPhone, free games on Playstore, and PC games are introduced here regularly. If you love discovering new games to play with friends, follow SnapBlitz Gaming on Instagram by Adithyan M from Kerala, India.</p>
+                        </div>
+                        <span class="platform-handle">@snap_blitz_gaming</span>
+                    </div>
+                </a>
+
+                <!-- Card 4: Editing Instagram -->
+                <a href="https://www.instagram.com/snap_blitz_edits" target="_blank" rel="noopener" class="platform-card hover-target reveal-up" data-delay="0" aria-label="SnapBlitz Edits free editing resources Instagram channel by Adithyan M">
+                    <div class="platform-card-content">
+                        <div class="platform-card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-arrow" viewBox="0 0 24 24">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <span class="platform-card-label">Instagram</span>
+                        <h3 class="platform-card-title">SnapBlitz Edits — @snap_blitz_edits</h3>
+                        <div class="platform-card-tags">
+                            <span class="platform-card-tag">Editing</span>
+                            <span class="platform-card-tag">Free Resources</span>
+                            <span class="platform-card-tag">Plugins</span>
+                            <span class="platform-card-tag">Tutorials</span>
+                        </div>
+                        <div class="platform-desc-wrapper">
+                            <p class="platform-desc">SnapBlitz Edits is the editing focused Instagram page of Adithyan M where free editing resources, free editing packs, plugin giveaways, limited time free offers on editing tools and applications, trending editing tutorials, and creative editing tips are shared regularly. Everything shared on this page by Adithyan M is focused on helping creators get free or discounted editing resources and tools. If you are a video editor or content creator looking for free editing tools and resources, follow SnapBlitz Edits on Instagram.</p>
+                        </div>
+                        <span class="platform-handle">@snap_blitz_edits</span>
+                    </div>
+                </a>
+
+                <!-- Card 5: Main YouTube -->
+                <a href="https://www.youtube.com/@Snap_blitz" target="_blank" rel="noopener" class="platform-card hover-target reveal-up" data-delay="100" aria-label="SnapBlitz technology YouTube channel by Adithyan M">
+                    <div class="platform-card-content">
+                        <div class="platform-card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-icon" viewBox="0 0 24 24">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-arrow" viewBox="0 0 24 24">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <span class="platform-card-label">YouTube</span>
+                        <h3 class="platform-card-title">Snap Blitz — @Snap_blitz</h3>
+                        <div class="platform-card-tags">
+                            <span class="platform-card-tag">Tech Reviews</span>
+                            <span class="platform-card-tag">Unboxing</span>
+                            <span class="platform-card-tag">Smartphones</span>
+                            <span class="platform-card-tag">Tips</span>
+                        </div>
+                        <div class="platform-desc-wrapper">
+                            <p class="platform-desc">The main YouTube channel of Adithyan M — SnapBlitz — is a pure technology channel based in Kerala, India. This channel features smartphone unboxings, tech product reviews, mobile phone recommendations, new gadget launches, free app recommendations, Android customization tips, and technology content for everyday users. Adithyan M creates honest and easy to understand tech content for students, creators, and tech enthusiasts across India and beyond. Subscribe to SnapBlitz on YouTube for the latest tech reviews and unboxing videos by Adithyan M.</p>
+                        </div>
+                        <span class="platform-handle">@Snap_blitz</span>
+                    </div>
+                </a>
+
+                <!-- Card 6: Gaming YouTube -->
+                <a href="https://www.youtube.com/@snapblitzgaming" target="_blank" rel="noopener" class="platform-card hover-target reveal-up" data-delay="200" aria-label="SnapBlitz Gaming YouTube channel by Adithyan M">
+                    <div class="platform-card-content">
+                        <div class="platform-card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-icon" viewBox="0 0 24 24">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="platform-arrow" viewBox="0 0 24 24">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </div>
+                        <span class="platform-card-label">YouTube</span>
+                        <h3 class="platform-card-title">SnapBlitz Gaming — @snapblitzgaming</h3>
+                        <div class="platform-card-tags">
+                            <span class="platform-card-tag">Gaming</span>
+                            <span class="platform-card-tag">Livestream</span>
+                            <span class="platform-card-tag">PC Games</span>
+                            <span class="platform-card-tag">Fun</span>
+                        </div>
+                        <div class="platform-desc-wrapper">
+                            <p class="platform-desc">SnapBlitz Gaming is the fun and casual gaming YouTube channel of Adithyan M. This channel features game introduction videos, gaming recommendations, PC game livestreams, and multiplayer gaming content. Adithyan M goes live on this channel to play PC games casually and shares game discovery content for the SnapBlitz community from Kerala, India. In the future this channel will grow with more gaming recommendations, livestreams, and fun gaming content. Subscribe to SnapBlitz Gaming on YouTube by Adithyan M.</p>
+                        </div>
+                        <span class="platform-handle">@snapblitzgaming</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Follow Button -->
+            <div class="platforms-cta text-center reveal-up">
+                <a href="https://www.youtube.com/@Snap_blitz" target="_blank" rel="noopener" class="btn btn-filled hover-target" aria-label="Follow All Channels of Adithyan M SnapBlitz on YouTube">Follow All Channels &rarr;</a>
+            </div>
+
+            <!-- Hidden SEO Metadata -->
+            <p class="seo-text" style="position:absolute;opacity:0;pointer-events:none;">
+                Adithyan M, known as SnapBlitz, is a tech content creator, digital influencer, and YouTuber from Kerala, India. Follow SnapBlitz on Instagram, YouTube, and all social media platforms for tech reviews, unboxing videos, gadget tips, editing resources, and gaming content.
+            </p>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section class="contact section-padding" id="contact">
-        <div class="container">
-            <h2 class="section-title reveal-up"></h2>
-            <div class="contact-grid">
-                <!-- Contact cards injected by content.js -->
+    <section class="contact section-padding" id="contact" aria-label="Contact Adithyan M SnapBlitz for Collaborations">
+        <div class="container contact-container reveal-up">
+            <!-- Left Column: Contact Info & Cards -->
+            <div class="contact-info-col">
+                <span class="contact-section-label">/ Get In Touch</span>
+                <h2 class="contact-main-title" title="Contact Adithyan M — SnapBlitz Tech Content Creator Kerala">Say Hello.</h2>
+                <p class="contact-para">
+                    Have a project in mind? Whether it is a tech product launch, a smartphone review, a gadget sponsorship, or a creative content collaboration, Adithyan M — SnapBlitz is the right creator to partner with. Based in Kerala, India, SnapBlitz reaches a growing audience of tech lovers, students, and digital enthusiasts across India. Get in touch and let's create something great together.
+                </p>
+                
+                <div class="contact-cards-stack">
+                    <!-- Email Card -->
+                    <a href="mailto:snapblitz.officiall@gmail.com" class="contact-card hover-target">
+                        <div class="contact-card-bg"></div>
+                        <div class="contact-content">
+                            <div class="contact-icon-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="contact-card-icon">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">snapblitz.officiall@gmail.com</span>
+                            </div>
+                            <span class="contact-arrow">&rarr;</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Instagram Card -->
+                    <a href="https://www.instagram.com/snap_blitz" target="_blank" rel="noopener" class="contact-card hover-target">
+                        <div class="contact-card-bg"></div>
+                        <div class="contact-content">
+                            <div class="contact-icon-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="contact-card-icon">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label">Instagram</span>
+                                <span class="contact-value">@snap_blitz</span>
+                            </div>
+                            <span class="contact-arrow">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Column: Premium Collaboration Card -->
+            <div class="contact-form-col">
+                <div class="contact-form-box">
+                    <span class="contact-section-label">/ Open For Collaborations</span>
+                    <h2 class="collab-title">Let's Work Together.</h2>
+                    <div class="collab-body">
+                        <p class="collab-para">
+                            Adithyan M — SnapBlitz is open for brand collaborations, product sponsorships, gadget review partnerships, tech content deals, YouTube integrations, Instagram promotions, and creative digital projects. If you represent a tech brand, startup, app, or product and want to reach a genuine and engaged tech audience in Kerala, India, this is the right place to connect.
+                        </p>
+                        <p class="collab-para">
+                            For business inquiries, collaboration proposals, sponsored content requests, and partnership discussions, send a direct email. Every message is personally reviewed by Adithyan M and genuine business opportunities always receive a response within 24 to 48 hours.
+                        </p>
+                        <p class="collab-disclaimer">
+                            Please note — SnapBlitz does not promote gambling apps, betting platforms, illegal applications, adult content, or any content that violates community guidelines. Such inquiries will not be entertained.
+                        </p>
+                    </div>
+                    <div class="collab-cta">
+                        <a href="mailto:snapblitz.officiall@gmail.com" class="btn btn-filled hover-target" aria-label="Send email to Adithyan M SnapBlitz for brand collaboration">Send Email &rarr;</a>
+                        <p class="collab-muted">Response time: within 24–48 hours</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

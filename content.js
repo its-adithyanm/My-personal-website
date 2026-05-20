@@ -151,7 +151,7 @@ const siteContent = {
         title: "Tools & Expertise",
         desc: "A blend of creative software and strategic execution to bring ideas to life across digital platforms.",
         tools: [
-            "Adobe Premiere", "After Effects", "Photoshop", "CapCut", "DaVinci Resolve", "Canva", "Lightroom", "Figma"
+            "Adobe Premiere", "After Effects", "Photoshop", "CapCut", "Canva", "Lightroom"
         ],
         bars: [
             { name: "Video Editing", pct: "92%" },
@@ -335,7 +335,10 @@ function initContent() {
 
     const toolChips = document.querySelector('.tool-chips');
     if(toolChips) {
-        toolChips.innerHTML = siteContent.skills.tools.map(tool => `<span class="chip hover-target">${tool}</span>`).join('');
+        toolChips.innerHTML = siteContent.skills.tools.map(tool => {
+            const slug = tool.toLowerCase().replace(/ /g, '-');
+            return `<a href="tools/${slug}.html" target="_blank" rel="noopener" class="chip hover-target">${tool}</a>`;
+        }).join('');
     }
 
     const skillsBars = document.querySelector('.skills-bars');
@@ -360,25 +363,7 @@ function initContent() {
     const quoteAuthor = document.querySelector('.quote-author');
     if(quoteAuthor) quoteAuthor.innerHTML = siteContent.quote.author;
 
-    // 10. Contact Section
-    const contactTitle = document.querySelector('.contact .section-title');
-    if(contactTitle) contactTitle.innerHTML = siteContent.contact.title;
-
-    const contactGrid = document.querySelector('.contact-grid');
-    if(contactGrid) {
-        contactGrid.innerHTML = siteContent.contact.cards.map((card, index) => `
-            <a href="${card.url}" target="${card.url.startsWith('http') ? '_blank' : '_self'}" class="contact-card hover-target reveal-up" data-delay="${(index % 2) * 100}">
-                <div class="contact-card-bg"></div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <span class="contact-label">${card.label}</span>
-                        <span class="contact-value">${card.value}</span>
-                    </div>
-                    <span class="contact-arrow">&rarr;</span>
-                </div>
-            </a>
-        `).join('');
-    }
+    // 10. Contact Section - Redesigned statically in index.html for premium two-column layout
 
     // 11. Footer
     const footerLinks = document.querySelector('.footer-links');
