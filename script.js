@@ -35,6 +35,19 @@
   });
 })();
 
+// Disable user pinch-zoom and gesture zooming on mobile
+if (typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+    document.addEventListener('touchstart', function(e) {
+        if (e.touches.length > 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+    });
+}
+
 // Ease-out cubic function for animations
 const easeOutCubic = (t) => {
     return 1 - Math.pow(1 - t, 3);

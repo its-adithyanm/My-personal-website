@@ -2212,3 +2212,787 @@ body::after {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--gray-200);
 }
+
+/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVE REBUILD & OVERRIDES (<= 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    /* 1. Global Safety & Viewport Protection */
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        overscroll-behavior-x: none !important;
+        touch-action: pan-y !important;
+        position: relative !important;
+        -webkit-text-size-adjust: 100% !important;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box !important;
+    }
+
+    img, video, iframe, canvas, svg {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* Hide heavy desktop-only fog effects on touch screens for 60fps scrolling */
+    #fog-canvas, .fog-canvas {
+        display: none !important;
+    }
+
+    /* Page preloader text scaling */
+    .loader-text {
+        font-size: clamp(2rem, 10vw, 4rem) !important;
+    }
+
+    /* 2. Section Spacing Base */
+    .section-padding {
+        padding: 60px 20px !important;
+    }
+
+    .section-padding .container {
+        padding: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* 3. Navbar Mobile Rebuild */
+    .navbar {
+        height: 72px !important;
+        padding: 0 20px !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        display: flex !important;
+        align-items: center !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-bottom: 1px solid #e8e8e8 !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        z-index: 1000 !important;
+    }
+    
+    .navbar.scrolled {
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+    
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .logo {
+        font-size: clamp(1.4rem, 4vw, 1.8rem) !important;
+        letter-spacing: 2px !important;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .hamburger {
+        display: flex !important;
+        position: relative !important;
+        right: 0 !important;
+        z-index: 1001 !important;
+        width: 30px !important;
+        height: 24px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+    
+    .hamburger .line {
+        width: 100% !important;
+        height: 2px !important;
+        background: #000000 !important;
+        transition: all 0.3s var(--ease-smooth) !important;
+    }
+    
+    .hamburger.active .line {
+        background: #ffffff !important;
+    }
+
+    .mobile-nav {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: #000000 !important;
+        color: #ffffff !important;
+        z-index: 999 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transform: translateY(-100%) !important;
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1) !important;
+    }
+
+    .mobile-nav.active {
+        transform: translateY(0) !important;
+    }
+
+    .mobile-nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+    }
+
+    .mobile-link {
+        font-family: var(--font-display) !important;
+        font-size: clamp(2rem, 8vw, 3.5rem) !important;
+        color: #ffffff !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .mobile-link:hover {
+        color: #999999 !important;
+    }
+
+    /* 4. Content Universe Grid Collapse (Work Section) */
+    .work-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 2rem !important;
+    }
+    
+    .work-card {
+        padding: 2rem 1.25rem !important;
+        height: auto !important;
+    }
+    
+    .card-tags {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+    
+    .card-tag {
+        font-size: 0.75rem !important;
+    }
+    
+    .card-num {
+        font-size: clamp(2rem, 6vw, 3rem) !important;
+        opacity: 0.4 !important;
+    }
+
+    /* Premium Floating Modal Card */
+    .modal-overlay {
+        padding: 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .modal-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: 90vh !important;
+        border-radius: 12px !important;
+        padding: 3.5rem 1.25rem 1.5rem 1.25rem !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .modal-close {
+        top: 1rem !important;
+        right: 1rem !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        background: rgba(240, 240, 240, 0.9) !important;
+        border: 1px solid #e8e8e8 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10 !important;
+    }
+    
+    .modal-body {
+        overflow-y: auto !important;
+        flex-grow: 1 !important;
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .modal-num {
+        font-size: clamp(2rem, 6vw, 3rem) !important;
+    }
+    
+    .modal-title {
+        font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* 5. Platforms Grid Collapse */
+    .platforms-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .platform-card {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 1.5rem 1.25rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .platform-desc-wrapper {
+        height: auto !important;
+        overflow: visible !important;
+        padding-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .platform-desc-wrapper::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    .platform-card-tags {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.35rem !important;
+    }
+
+    .platform-card-title {
+        font-size: clamp(1.1rem, 4vw, 1.35rem) !important;
+    }
+
+    .platforms-cta {
+        margin-top: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Hero Section Mobile Rebuild */
+    .hero {
+        height: auto !important;
+        min-height: calc(100vh - 72px) !important;
+        margin-top: 72px !important;
+        padding: 2.5rem 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-content {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    
+    .hero-heading-main {
+        font-size: clamp(2.8rem, 12vw, 4.5rem) !important;
+        margin: 0.5rem 0 !important;
+        line-height: 1.1 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .hero-heading-small {
+        font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+        text-align: center !important;
+    }
+    
+    .hero-heading-sub {
+        font-size: clamp(1.2rem, 5vw, 1.6rem) !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+    
+    .hero-subtext {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin: 1rem auto 1.5rem auto !important;
+        max-width: 90% !important;
+        text-align: center !important;
+    }
+    
+    .hero-cta {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .hero-cta .btn {
+        flex: 1 !important;
+        max-width: 200px !important;
+        text-align: center !important;
+        min-height: 52px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-bg-text-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        opacity: 0.025 !important;
+    }
+    
+    .hero-bg-text {
+        font-size: clamp(6rem, 20vw, 10rem) !important;
+        max-width: 100% !important;
+        white-space: nowrap !important;
+    }
+    
+    .hero-socials, .hero-bottom-left {
+        display: none !important;
+    }
+
+    /* 2. Marquee Strip */
+    .marquee-wrapper {
+        padding: 10px 0 !important;
+    }
+    .marquee-content {
+        font-size: 0.85rem !important;
+        animation-duration: 25s !important;
+    }
+
+    /* 3. About Section Mobile Rebuild (Intelligent Ordering) */
+    .about-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+    }
+    
+    .about-image-col, .about-text-col {
+        display: contents !important;
+    }
+    
+    .about-grid .section-title {
+        order: 1 !important;
+        text-align: center !important;
+        font-size: clamp(1.8rem, 8vw, 3rem) !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .about-image-wrapper {
+        order: 2 !important;
+        margin: 0 auto 1rem auto !important;
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+
+    .about-image-border {
+        top: 1.25rem !important;
+        left: -1.25rem !important;
+    }
+    
+    .location-tag {
+        bottom: -0.5rem !important;
+        right: -0.5rem !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .about-bio {
+        order: 3 !important;
+        width: 100% !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .about-bio p {
+        margin-bottom: 1rem !important;
+    }
+    
+    .about-stats {
+        order: 4 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 0.5rem !important;
+        margin-top: 1.5rem !important;
+        padding-top: 1.5rem !important;
+        border-top: 1px solid #e8e8e8 !important;
+    }
+    
+    .stat-item {
+        flex: 1 !important;
+        text-align: center !important;
+    }
+    
+    .stat-number {
+        font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .stat-label {
+        font-size: clamp(0.65rem, 2.5vw, 0.8rem) !important;
+        color: #999999 !important;
+    }
+
+    /* 4. Tools & Expertise Section (Full Black Bleed Cover & Stack) */
+    .skills {
+        background: #000000 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    
+    .skills-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+    }
+    
+    .skills-text {
+        text-align: center !important;
+    }
+    
+    .tool-chips {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    .chip {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.75rem !important;
+        display: inline-block !important;
+    }
+    
+    .skills-bars {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+    }
+    
+    .skill-info {
+        font-size: 0.85rem !important;
+    }
+
+    /* 5. YouTube Showcase */
+    .youtube-stats-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .youtube-stat-card {
+        padding: 1.25rem 1rem !important;
+        min-height: 110px !important;
+    }
+    
+    .youtube-stat-number {
+        font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
+    }
+    
+    .youtube-stat-label {
+        font-size: 0.75rem !important;
+    }
+    
+    .youtube-videos-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* 6. Quote Section */
+    .quote {
+        padding: 4rem 20px !important;
+    }
+    
+    .quote-mark {
+        font-size: 3.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .main-quote {
+        font-size: clamp(1.15rem, 4.5vw, 1.6rem) !important;
+        line-height: 1.5 !important;
+        max-width: 95% !important;
+        margin: 0 auto 1.5rem auto !important;
+        text-align: center !important;
+    }
+
+    /* 7. Contact Section Mobile Rebuild */
+    .contact-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+    }
+    
+    .contact-info-col {
+        text-align: center !important;
+    }
+    
+    .contact-para {
+        margin: 1rem auto 2rem auto !important;
+        font-size: 0.95rem !important;
+        max-width: 90% !important;
+    }
+    
+    .contact-cards-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+
+    .contact-card {
+        width: 100% !important;
+        height: auto !important;
+        padding: 1.25rem 1rem !important;
+        display: block !important;
+    }
+
+    .contact-content {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        gap: 1rem !important;
+    }
+
+    .contact-icon-wrap {
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .contact-info {
+        flex: 1 1 0% !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        text-align: left !important;
+    }
+
+    .contact-label {
+        font-size: 0.75rem !important;
+        color: #999999 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 0.15rem !important;
+    }
+
+    .contact-value {
+        font-size: clamp(0.85rem, 3.5vw, 1.05rem) !important;
+        word-break: break-all !important;
+        word-wrap: break-word !important;
+        overflow-wrap: anywhere !important;
+        white-space: normal !important;
+        display: block !important;
+    }
+
+    .contact-arrow {
+        flex-shrink: 0 !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .contact-form-box {
+        width: 100% !important;
+        padding: 2rem 1.25rem !important;
+        border-radius: 8px !important;
+        border: 1px solid #e8e8e8 !important;
+        background: #ffffff !important;
+    }
+
+    .collab-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+    }
+
+    .collab-para {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+        color: #555555 !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+    }
+
+    .collab-disclaimer {
+        font-size: 0.8rem !important;
+        line-height: 1.5 !important;
+        color: #e63946 !important;
+        margin-top: 1.5rem !important;
+        text-align: center !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .collab-cta {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+        align-items: stretch !important;
+        text-align: center !important;
+    }
+
+    .collab-cta .btn {
+        width: 100% !important;
+        text-align: center !important;
+        min-height: 52px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* 8. Footer Rebuild */
+    .footer {
+        padding: 3rem 20px 2rem 20px !important;
+        text-align: center !important;
+    }
+    
+    .footer-top {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        border-bottom: 1px solid #e8e8e8 !important;
+    }
+    
+    .footer-logo {
+        margin: 0 !important;
+    }
+    
+    .footer-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+    }
+    
+    .footer-links a {
+        margin: 0 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .footer-bottom {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        padding-top: 0 !important;
+    }
+
+    /* 9. Experience Subpages Responsiveness */
+    .tool-container {
+        padding: 6rem 20px 3rem 20px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .tool-heading {
+        font-size: clamp(2rem, 8vw, 3.5rem) !important;
+        line-height: 1.1 !important;
+    }
+    
+    .tool-subheading {
+        font-size: clamp(1.1rem, 4.5vw, 1.5rem) !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .tool-divider {
+        margin-bottom: 2rem !important;
+    }
+    
+    .tool-experience-text {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Stack Hero CTA Buttons Vertically */
+    .hero-cta {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 14px !important;
+    }
+    
+    .hero-cta .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+    }
+}
+
+@media (max-width: 390px) {
+    /* Narrow screens overrides (iPhone SE/Galaxy) */
+    .section-padding {
+        padding: 50px 15px !important;
+    }
+    
+    .navbar {
+        padding: 0 15px !important;
+    }
+    
+    .about-bio {
+        max-width: 100% !important;
+    }
+    
+    .about-stats {
+        gap: 0.25rem !important;
+    }
+    
+    .stat-number {
+        font-size: clamp(1.3rem, 4.5vw, 1.8rem) !important;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem !important;
+    }
+    
+    .contact-card {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .contact-content {
+        gap: 0.5rem !important;
+    }
+    
+    .contact-value {
+        font-size: 0.85rem !important;
+    }
+}
