@@ -1,6 +1,6 @@
 const siteContent = {
     meta: {
-        title: "Adithyan | SnapBlitz - Content Creator"
+        title: "Adithyan M | SnapBlitz — Tech Creator & Digital Influencer from Kerala"
     },
     loader: {
         text: "SNAPBLITZ" // Will be split into spans
@@ -25,9 +25,9 @@ const siteContent = {
         cta2: { text: "Get In Touch", url: "#contact" },
         scrollLabel: "Scroll",
         socials: [
-            { text: "IG", url: "https://www.instagram.com/snap_blitz" },
-            { text: "YT", url: "https://www.youtube.com/@snap_blitz" },
-            { text: "LI", url: "https://www.linkedin.com/in/adithyan-m-content-creator" }
+            { text: "IG", url: "https://www.instagram.com/snap_blitz", ariaLabel: "Follow SnapBlitz on Instagram" },
+            { text: "YT", url: "https://www.youtube.com/@snap_blitz", ariaLabel: "Subscribe to SnapBlitz on YouTube" },
+            { text: "LI", url: "https://www.linkedin.com/in/adithyan-m-content-creator", ariaLabel: "Connect with Adithyan M on LinkedIn" }
         ]
     },
     marquee: {
@@ -35,15 +35,15 @@ const siteContent = {
         repeat: 2
     },
     about: {
-        image: "assets/images/photo.png",
+        image: "assets/images/photo.webp",
         location: "Kerala, India",
         title: "Passionate <span class=\"italic-accent\">Tech Influencer</span> &amp; Digital Creator.",
         bio: [
-            "I'm Adithyan, popularly known as <strong>SnapBlitz</strong> — a tech influencer, digital creator, and content creator from Kerala, India. I create engaging content focused on technology, smartphones, gadgets, gaming, apps, editing, creator tools, and the latest digital trends across Instagram and YouTube.",
-            "Through SnapBlitz, I share creative and informative content designed for people who love tech and digital culture — including tech updates, smartphone content, gaming experiences, editing tips, cinematic visuals, and modern internet trends.",
-            "Apart from content creation, I also have experience in website development, landing page creation, WordPress websites, front-end coding, and modern UI-based web experiences. I enjoy building smooth, responsive, and visually clean websites.",
+            "I'm Adithyan M, popularly known as <strong>SnapBlitz</strong> — a tech creator, digital influencer, and YouTuber from Kerala, India. I specialize in smartphone content, gadget reviews, and creative video editing, sharing my experiences across Instagram, YouTube, and other digital platforms.",
+            "Through SnapBlitz, I build partnerships and handle brand collaborations to showcase the latest tech products, secret apps, and hidden Android features to a community of tech lovers in Kerala and all over India.",
+            "Apart from content creation, I also have experience in website development, front-end coding, and modern UI-based web experiences. I enjoy building smooth, responsive, and visually clean websites.",
             "My interests include technology, content strategy, video production, photography, web experiences, branding, gaming, and creative storytelling. I'm always learning, improving, and adapting to new trends to create better digital experiences.",
-            "As the creator behind SnapBlitz, my mission is to build a strong digital brand that inspires creativity, shares modern tech culture, and connects with people who are passionate about technology, gaming, and the creator world."
+            "As the tech creator behind SnapBlitz, my mission is to build a strong digital brand that inspires creativity, shares modern tech culture, and connects with people who are passionate about technology, gaming, and the creator world."
         ],
         stats: [
             { target: "50", suffix: "K+", label: "Views" },
@@ -164,7 +164,7 @@ const siteContent = {
     },
     quote: {
         text: "Creating content that connects creativity, technology, and entertainment.",
-        author: "&mdash; Adithyan / SnapBlitz"
+        author: "&mdash; Adithyan M / SnapBlitz"
     },
     contact: {
         title: "Say Hello.",
@@ -183,7 +183,7 @@ const siteContent = {
             { text: "Skills", url: "#skills" },
             { text: "Contact", url: "#contact" }
         ],
-        copyright: "&copy; 2025 Adithyan &middot; SnapBlitz. All rights reserved.",
+        copyright: "&copy; 2025 Adithyan M &middot; SnapBlitz. All rights reserved.",
         location: "Kerala, India 🌴"
     }
 };
@@ -251,7 +251,7 @@ function initContent() {
     const heroSocials = document.querySelector('.hero-socials');
     if(heroSocials) {
         heroSocials.innerHTML = siteContent.hero.socials.map(social => `
-            <a href="${social.url}" target="_blank" class="hover-target">${social.text}</a>
+            <a href="${social.url}" target="_blank" class="hover-target" aria-label="${social.ariaLabel}">${social.text}</a>
         `).join('');
     }
 
@@ -269,7 +269,7 @@ function initContent() {
     const aboutImageWrapper = document.querySelector('.about-image-wrapper');
     if (aboutImageWrapper) {
         const borderDiv = '<div class="about-image-border"></div>';
-        const imgTag = `<img src="${siteContent.about.image}" alt="About" class="about-image" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:2;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
+        const imgTag = `<img src="${siteContent.about.image}" alt="Adithyan M SnapBlitz Tech Creator Kerala" class="about-image" fetchpriority="high" loading="lazy" decoding="async" width="400" height="500" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:2;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
         // Fallback placeholder if image fails to load or isn't present
         const placeholderDiv = `<div class="about-image placeholder" style="display:none;"><span>Replace with your photo</span></div>`;
         
@@ -337,7 +337,7 @@ function initContent() {
     if(toolChips) {
         toolChips.innerHTML = siteContent.skills.tools.map(tool => {
             const slug = tool.toLowerCase().replace(/ /g, '-');
-            return `<a href="tools/${slug}.html" target="_blank" rel="noopener" class="chip hover-target">${tool}</a>`;
+            return `<a href="tools/${slug}/" target="_blank" rel="noopener" class="chip hover-target">${tool}</a>`;
         }).join('');
     }
 

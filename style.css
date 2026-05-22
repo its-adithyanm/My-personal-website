@@ -2996,3 +2996,12 @@ body::after {
         font-size: 0.85rem !important;
     }
 }
+
+/* JavaScript Disabled Fallback for SEO & Accessibility */
+.no-js .reveal-up,
+.no-js .reveal-left,
+.no-js .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
