@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `
                     <a href="${item.link}" target="_blank" class="youtube-video-card hover-target reveal-up" data-delay="${(index % 3) * 100}">
                         <div class="youtube-thumb-wrapper">
-                            <img src="${thumbnailUrl}" alt="${decodedTitle}" loading="lazy" class="youtube-thumb-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/0.jpg';">
+                            <img src="${thumbnailUrl}" alt="${decodedTitle}" loading="lazy" decoding="async" class="youtube-thumb-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/${videoId}/0.jpg';">
                             <div class="youtube-thumb-gradient"></div>
                             <div class="youtube-video-text-container">
                                 <span class="youtube-video-date">${formattedDate}</span>

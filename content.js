@@ -1,6 +1,6 @@
 const siteContent = {
     meta: {
-        title: "Adithyan M | SnapBlitz — Tech Creator & Digital Influencer from Kerala"
+        title: "Adithyan M — Tech Content Creator | SnapBlitz"
     },
     loader: {
         text: "SNAPBLITZ" // Will be split into spans
@@ -8,42 +8,42 @@ const siteContent = {
     nav: {
         logo: "SNAPBLITZ",
         links: [
-            { text: "About", url: "#about" },
-            { text: "Work", url: "#work" },
-            { text: "Skills", url: "#skills" },
-            { text: "Contact", url: "#contact" }
+            { text: "Home", url: "/" },
+            { text: "About", url: "/about-adithyan-m/" },
+            { text: "Tech Content", url: "/#work" },
+            { text: "Collaborate", url: "/collaborate/" },
+            { text: "Contact", url: "/contact/" }
         ]
     },
     hero: {
-        bgText: "CREATOR",
-        tag: "Content Creator &middot; Tech Enthusiast",
-        headingSmall: "Hi, I'm",
-        headingMain: "ADITHYAN",
-        headingSub: "aka SnapBlitz",
-        subtext: "Creating content that connects creativity, technology & entertainment.",
+        bgText: "ADITHYAN M",
+        tag: "Adithyan M &middot; Tech Content Creator",
+        headingSmall: "",
+        headingMain: "ADITHYAN M",
+        headingSub: "Tech Content Creator (SnapBlitz)",
+        subtext: "I am Adithyan M, a tech content creator sharing smartphone reviews, gadget tips, Android tricks, and engaging tech videos.",
         cta1: { text: "See My Work", url: "#work" },
         cta2: { text: "Get In Touch", url: "#contact" },
         scrollLabel: "Scroll",
         socials: [
-            { text: "IG", url: "https://www.instagram.com/snap_blitz", ariaLabel: "Follow SnapBlitz on Instagram" },
-            { text: "YT", url: "https://www.youtube.com/@snap_blitz", ariaLabel: "Subscribe to SnapBlitz on YouTube" },
+            { text: "IG", url: "https://www.instagram.com/snap_blitz", ariaLabel: "Follow Adithyan M on Instagram" },
+            { text: "YT", url: "https://www.youtube.com/@snap_blitz", ariaLabel: "Subscribe to Adithyan M on YouTube" },
             { text: "LI", url: "https://www.linkedin.com/in/adithyan-m-content-creator", ariaLabel: "Connect with Adithyan M on LinkedIn" }
         ]
     },
     marquee: {
-        text: "Content Creator &middot; Tech Enthusiast &middot; Video Editor &middot; Gaming &middot; Visual Storyteller &middot; Digital Creator &middot; Kerala, India &middot;",
+        text: "Adithyan M &middot; Tech Content Creator &middot; Smartphone Reviews &middot; Gadget Tips &middot; Android Tricks &middot; Mobile Features &middot; Tech Videos &middot;",
         repeat: 2
     },
     about: {
         image: "assets/images/photo.webp",
         location: "Kerala, India",
-        title: "Passionate <span class=\"italic-accent\">Tech Influencer</span> &amp; Digital Creator.",
+        title: "About Adithyan M &ndash; Tech Content Creator from Kerala, India",
         bio: [
-            "I'm Adithyan M, popularly known as <strong>SnapBlitz</strong> — a tech creator, digital influencer, and YouTuber from Kerala, India. I specialize in smartphone content, gadget reviews, and creative video editing, sharing my experiences across Instagram, YouTube, and other digital platforms.",
-            "Through SnapBlitz, I build partnerships and handle brand collaborations to showcase the latest tech products, secret apps, and hidden Android features to a community of tech lovers in Kerala and all over India.",
-            "Apart from content creation, I also have experience in website development, front-end coding, and modern UI-based web experiences. I enjoy building smooth, responsive, and visually clean websites.",
-            "My interests include technology, content strategy, video production, photography, web experiences, branding, gaming, and creative storytelling. I'm always learning, improving, and adapting to new trends to create better digital experiences.",
-            "As the tech creator behind SnapBlitz, my mission is to build a strong digital brand that inspires creativity, shares modern tech culture, and connects with people who are passionate about technology, gaming, and the creator world."
+            "I'm Adithyan M, also known as <strong>SnapBlitz</strong>. This is my official website where I share my passion for technology as a dedicated tech content creator based in Kerala, India.",
+            "As Adithyan M, my main niche is tech content creation. I focus on delivering high-quality smartphone reviews, gadget tips, Android tricks, and exploring the latest mobile features.",
+            "Through my SnapBlitz channels, I create engaging technology videos and digital content that simplify technology for everyday users. Explore the <a href=\"#work\" style=\"color: var(--text-color); text-decoration: underline;\">Tech Content by Adithyan M</a> to see what I create, or visit the <a href=\"#platforms\" style=\"color: var(--text-color); text-decoration: underline;\">Official Platforms of Adithyan M</a> to watch the latest videos.",
+            "Whether you are looking for tech reviews or Android tricks, I, Adithyan M, am here to guide you through the fast-paced world of technology. Feel free to <a href=\"#contact\" style=\"color: var(--text-color); text-decoration: underline;\">Contact Adithyan M</a> for any brand collaborations or tech partnerships."
         ],
         stats: [
             { target: "50", suffix: "K+", label: "Views" },
@@ -52,7 +52,7 @@ const siteContent = {
         ]
     },
     work: {
-        title: "My Content Universe",
+        title: "Tech Content by Adithyan M",
         cards: [
             {
                 num: "01",
@@ -148,7 +148,7 @@ const siteContent = {
         ]
     },
     skills: {
-        title: "Tools & Expertise",
+        title: "Tech Creator Expertise",
         desc: "A blend of creative software and strategic execution to bring ideas to life across digital platforms.",
         tools: [
             "Adobe Premiere", "After Effects", "Photoshop", "CapCut", "Canva", "Lightroom"
@@ -163,11 +163,11 @@ const siteContent = {
         ]
     },
     quote: {
-        text: "Creating content that connects creativity, technology, and entertainment.",
-        author: "&mdash; Adithyan M / SnapBlitz"
+        text: "Creating tech content that simplifies the digital world.",
+        author: "&mdash; Adithyan M (SnapBlitz)"
     },
     contact: {
-        title: "Say Hello.",
+        title: "Contact Adithyan M",
         cards: [
             { label: "Email", value: "snapblitz.officiall@gmail.com", url: "mailto:snapblitz.officiall@gmail.com" },
             { label: "Instagram", value: "@snap_blitz", url: "https://www.instagram.com/snap_blitz" },
@@ -178,12 +178,12 @@ const siteContent = {
     footer: {
         logo: "SNAPBLITZ",
         links: [
-            { text: "About", url: "#about" },
-            { text: "Work", url: "#work" },
-            { text: "Skills", url: "#skills" },
-            { text: "Contact", url: "#contact" }
+            { text: "Home", url: "/" },
+            { text: "About", url: "/about-adithyan-m/" },
+            { text: "Collaborate", url: "/collaborate/" },
+            { text: "Contact", url: "/contact/" }
         ],
-        copyright: "&copy; 2025 Adithyan M &middot; SnapBlitz. All rights reserved.",
+        copyright: "&copy; 2025 Adithyan M &middot; Tech Content Creator (SnapBlitz). All rights reserved.",
         location: "Kerala, India 🌴"
     }
 };
@@ -269,7 +269,7 @@ function initContent() {
     const aboutImageWrapper = document.querySelector('.about-image-wrapper');
     if (aboutImageWrapper) {
         const borderDiv = '<div class="about-image-border"></div>';
-        const imgTag = `<img src="${siteContent.about.image}" alt="Adithyan M SnapBlitz Tech Creator Kerala" class="about-image" fetchpriority="high" loading="lazy" decoding="async" width="400" height="500" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:2;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
+        const imgTag = `<img src="${siteContent.about.image}" alt="Adithyan M Tech Content Creator SnapBlitz" class="about-image" fetchpriority="high" loading="lazy" decoding="async" width="400" height="500" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:2;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
         // Fallback placeholder if image fails to load or isn't present
         const placeholderDiv = `<div class="about-image placeholder" style="display:none;"><span>Replace with your photo</span></div>`;
         
@@ -294,7 +294,7 @@ function initContent() {
     if(aboutStats) {
         aboutStats.innerHTML = siteContent.about.stats.map(stat => `
             <div class="stat-item">
-                <h3 class="stat-number"><span class="counter" data-target="${stat.target}">0</span>${stat.suffix}</h3>
+                <div class="stat-number"><span class="counter" data-target="${stat.target}">0</span>${stat.suffix}</div>
                 <p class="stat-label">${stat.label}</p>
             </div>
         `).join('');

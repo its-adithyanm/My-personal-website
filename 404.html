@@ -1,21 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting — SnapBlitz</title>
-  <script>
-    // Redirect old .html URLs to clean folder URLs
-    var path = window.location.pathname;
-    if (path.endsWith('.html')) {
-      var cleanPath = path.replace('.html', '/');
-      window.location.replace(cleanPath);
-    } else {
-      window.location.replace('/');
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Page Not Found | SnapBlitz</title>
+    
+    <meta name="description" content="The page you are looking for does not exist. Return to the SnapBlitz homepage.">
+    <meta name="robots" content="noindex, follow">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/photo.webp">
+    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+        .error-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-code {
+            font-size: 6rem;
+            font-family: var(--font-heading);
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: var(--font-heading);
+        }
+        .error-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+    </style>
 </head>
 <body>
-  <p>Redirecting...</p>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo hover-target">SNAPBLITZ</a>
+            <div class="nav-links desktop-nav">
+                <a href="/" class="hover-target">Home</a>
+                <a href="/about-adithyan-m/" class="hover-target">About</a>
+                <a href="/collaborate/" class="hover-target">Collaborate</a>
+                <a href="/contact/" class="hover-target">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="error-page">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-desc">The tech content or page you are looking for has been moved or no longer exists. Let's get you back to the main content.</p>
+        <a href="/" class="btn btn-filled hover-target">Return Home</a>
+    </main>
+
+    <script>
+        // Check if old .html URL and redirect to folder URL
+        var path = window.location.pathname;
+        if (path.endsWith('.html') && path !== '/404.html') {
+            var cleanPath = path.replace('.html', '/');
+            window.location.replace(cleanPath);
+        }
+    </script>
 </body>
 </html>
