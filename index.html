@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adithyan M — Tech Content Creator | SnapBlitz</title>
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
     
@@ -52,8 +52,7 @@
     <meta name="twitter:creator" content="@snap_blitz">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/photo.webp">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/photo.webp">
+    <link rel="icon" type="image/webp" sizes="any" href="assets/images/photo.webp">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/photo.webp">
     
     <!-- Preconnect / Prefetch for Performance -->
@@ -84,17 +83,51 @@
           "@type": "Person",
           "@id": "https://adithyanm.site/#adithyanm",
           "name": "Adithyan M",
-          "alternateName": "SnapBlitz",
+          "alternateName": ["SnapBlitz", "Adithyan"],
           "url": "https://adithyanm.site/",
           "image": {
             "@type": "ImageObject",
             "@id": "https://adithyanm.site/#personImage",
             "url": "https://adithyanm.site/assets/images/photo.webp",
-            "caption": "Adithyan M - Tech Content Creator (SnapBlitz)"
+            "contentUrl": "https://adithyanm.site/assets/images/photo.webp",
+            "caption": "Adithyan M - Tech Content Creator (SnapBlitz)",
+            "width": 400,
+            "height": 500
           },
           "jobTitle": "Tech Content Creator",
-          "description": "Adithyan M is a technology content creator from Kerala, India.",
+          "description": "Adithyan M is a technology content creator from Kerala, India, known for the SnapBlitz brand. He creates smartphone reviews, gadget tips, Android tricks, and engaging tech videos.",
           "email": "snapblitz.officiall@gmail.com",
+          "gender": "Male",
+          "nationality": {
+            "@type": "Country",
+            "name": "India"
+          },
+          "homeLocation": {
+            "@type": "Place",
+            "name": "Kerala, India"
+          },
+          "worksFor": {
+            "@id": "https://adithyanm.site/#snapblitz"
+          },
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Tech Content Creator",
+            "occupationLocation": {
+              "@type": "State",
+              "name": "Kerala, India"
+            }
+          },
+          "knowsAbout": [
+            "Smartphone Reviews",
+            "Android",
+            "Consumer Electronics",
+            "Gadget Reviews",
+            "Mobile Technology",
+            "Video Editing",
+            "Content Creation",
+            "Social Media",
+            "Video Editing Software"
+          ],
           "sameAs": [
             "https://www.instagram.com/snap_blitz",
             "https://www.instagram.com/snap_blitz_official",
@@ -107,7 +140,8 @@
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Kerala",
-            "addressCountry": "India"
+            "addressRegion": "Kerala",
+            "addressCountry": "IN"
           },
           "mainEntityOfPage": {
             "@id": "https://adithyanm.site/about-adithyan-m/#webpage"
@@ -117,35 +151,67 @@
           "@type": "Organization",
           "@id": "https://adithyanm.site/#snapblitz",
           "name": "SnapBlitz",
+          "alternateName": "SnapBlitz by Adithyan M",
           "url": "https://adithyanm.site/",
           "logo": {
-            "@id": "https://adithyanm.site/#personImage"
+            "@type": "ImageObject",
+            "@id": "https://adithyanm.site/#logo",
+            "url": "https://adithyanm.site/assets/images/photo.webp",
+            "caption": "SnapBlitz"
           },
-          "description": "SnapBlitz is the official technology content creator brand operated by Adithyan M.",
+          "image": {
+            "@id": "https://adithyanm.site/#logo"
+          },
+          "description": "SnapBlitz is the official technology content creator brand operated by Adithyan M, featuring smartphone reviews, gadget tips, Android tricks, and tech videos.",
+          "email": "snapblitz.officiall@gmail.com",
           "founder": {
             "@id": "https://adithyanm.site/#adithyanm"
-          }
+          },
+          "foundingLocation": {
+            "@type": "Place",
+            "name": "Kerala, India"
+          },
+          "sameAs": [
+            "https://www.instagram.com/snap_blitz",
+            "https://www.youtube.com/@snap_blitz",
+            "https://www.youtube.com/@snapblitzgaming"
+          ]
         },
         {
           "@type": "WebSite",
           "@id": "https://adithyanm.site/#website",
           "url": "https://adithyanm.site/",
-          "name": "Adithyan M Tech Content Creator",
-          "description": "Adithyan M is a technology content creator from Kerala, India. Through the SnapBlitz brand, he shares smartphone reviews, Android tips, and engaging tech videos.",
+          "name": "Adithyan M — Tech Content Creator (SnapBlitz)",
+          "description": "Official website of Adithyan M, a technology content creator from Kerala, India. Through the SnapBlitz brand, he shares smartphone reviews, Android tips, and engaging tech videos.",
+          "inLanguage": "en",
           "publisher": {
             "@id": "https://adithyanm.site/#snapblitz"
+          },
+          "about": {
+            "@id": "https://adithyanm.site/#adithyanm"
           }
         },
         {
-          "@type": "WebPage",
+          "@type": ["WebPage", "ProfilePage"],
           "@id": "https://adithyanm.site/#webpage",
           "url": "https://adithyanm.site/",
           "name": "Adithyan M — Tech Content Creator | SnapBlitz",
+          "description": "Adithyan M is a technology content creator from Kerala, India. Through the SnapBlitz brand, he shares smartphone reviews, Android tips, and engaging tech videos.",
           "isPartOf": {
             "@id": "https://adithyanm.site/#website"
           },
           "about": {
             "@id": "https://adithyanm.site/#adithyanm"
+          },
+          "mainEntity": {
+            "@id": "https://adithyanm.site/#adithyanm"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://adithyanm.site/#personImage"
+          },
+          "inLanguage": "en",
+          "breadcrumb": {
+            "@id": "https://adithyanm.site/#breadcrumb"
           }
         },
         {
@@ -209,18 +275,19 @@
     <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-bg-text-container">
-            <div class="hero-bg-text"></div>
+            <div class="hero-bg-text">ADITHYAN M</div>
         </div>
-        
+
         <div class="hero-content">
-            <div class="hero-tag pill hover-target"></div>
+            <div class="hero-tag pill hover-target">Adithyan M &middot; Tech Content Creator</div>
             <span class="hero-heading-small reveal-up"></span>
-            <h1 class="hero-heading-main reveal-up"></h1>
-            <span class="hero-heading-sub reveal-up"></span>
-            <p class="hero-subtext reveal-up"></p>
-            
+            <h1 class="hero-heading-main reveal-up">ADITHYAN M</h1>
+            <span class="hero-heading-sub reveal-up">Tech Content Creator (SnapBlitz)</span>
+            <p class="hero-subtext reveal-up">I am Adithyan M, a tech content creator sharing smartphone reviews, gadget tips, Android tricks, and engaging tech videos.</p>
+
             <div class="hero-cta reveal-up">
-                <!-- CTA buttons injected by content.js -->
+                <a href="#work" class="btn btn-filled hover-target">See My Work</a>
+                <a href="#contact" class="btn btn-outlined hover-target">Get In Touch</a>
             </div>
         </div>
 
@@ -264,8 +331,13 @@
                 </div>
             </div>
             <div class="about-text-col reveal-right">
-                <h2 class="section-title"></h2>
-                <div class="about-bio"></div>
+                <h2 class="section-title">About Adithyan M &ndash; Tech Content Creator from Kerala, India</h2>
+                <div class="about-bio">
+                    <p>I'm Adithyan M, also known as <strong>SnapBlitz</strong>. This is my official website where I share my passion for technology as a dedicated tech content creator based in Kerala, India.</p>
+                    <p>As Adithyan M, my main niche is tech content creation. I focus on delivering high-quality smartphone reviews, gadget tips, Android tricks, and exploring the latest mobile features.</p>
+                    <p>Through my SnapBlitz channels, I create engaging technology videos and digital content that simplify technology for everyday users. Explore the <a href="#work" style="color: var(--text-color); text-decoration: underline;">Tech Content by Adithyan M</a> to see what I create, or visit the <a href="#platforms" style="color: var(--text-color); text-decoration: underline;">Official Platforms of Adithyan M</a> to watch the latest videos.</p>
+                    <p>Whether you are looking for tech reviews or Android tricks, I, Adithyan M, am here to guide you through the fast-paced world of technology. Feel free to <a href="#contact" style="color: var(--text-color); text-decoration: underline;">Contact Adithyan M</a> for any brand collaborations or tech partnerships.</p>
+                </div>
                 <div class="about-stats"></div>
             </div>
         </div>
@@ -274,7 +346,7 @@
     <!-- Work Section -->
     <section class="work section-padding" id="work">
         <div class="container">
-            <h2 class="section-title text-center reveal-up"></h2>
+            <h2 class="section-title text-center reveal-up">Tech Content by Adithyan M</h2>
             <div class="work-grid">
                 <!-- Work cards injected by content.js -->
             </div>
@@ -285,8 +357,8 @@
     <section class="skills section-padding" id="skills">
         <div class="container skills-grid">
             <div class="skills-text reveal-left">
-                <h2 class="section-title"></h2>
-                <p></p>
+                <h2 class="section-title">Tech Creator Expertise</h2>
+                <p>A blend of creative software and strategic execution to bring ideas to life across digital platforms.</p>
                 <div class="tool-chips">
                     <a href="tools/adobe-premiere/" target="_blank" rel="noopener" class="chip hover-target">Adobe Premiere</a>
                     <a href="tools/after-effects/" target="_blank" rel="noopener" class="chip hover-target">After Effects</a>
@@ -386,8 +458,8 @@
     <section class="quote section-padding">
         <div class="container text-center reveal-up">
             <span class="quote-mark">"</span>
-            <blockquote class="main-quote"></blockquote>
-            <cite class="quote-author"></cite>
+            <blockquote class="main-quote">Creating tech content that simplifies the digital world.</blockquote>
+            <cite class="quote-author">&mdash; Adithyan M (SnapBlitz)</cite>
         </div>
     </section>
 
@@ -578,11 +650,6 @@
             <div class="platforms-cta text-center reveal-up">
                 <a href="https://www.youtube.com/@Snap_blitz" target="_blank" rel="noopener" class="btn btn-filled hover-target" aria-label="Follow All Channels of Adithyan M SnapBlitz on YouTube">Follow All Channels &rarr;</a>
             </div>
-
-            <!-- Hidden SEO Metadata -->
-            <p class="seo-text" style="position:absolute;opacity:0;pointer-events:none;">
-                Adithyan M, also known as SnapBlitz, is a dedicated tech content creator. This website belongs to Adithyan M, whose main niche is tech content creation. Discover smartphone reviews, gadget tips, Android tricks, mobile features, and engaging tech videos by Adithyan M.
-            </p>
         </div>
     </section>
 
@@ -679,7 +746,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p></p>
+                <p>&copy; 2025 Adithyan M &middot; Tech Content Creator (SnapBlitz). All rights reserved.</p>
+                <p>Kerala, India 🌴</p>
             </div>
         </div>
     </footer>

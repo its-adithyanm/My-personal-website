@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Block non-page source files from indexing (raw templates & build script)
+Disallow: /templates/
+Disallow: /tools_rewrite.py
+
 Sitemap: https://adithyanm.site/sitemap.xml

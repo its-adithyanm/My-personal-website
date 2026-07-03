@@ -269,7 +269,7 @@ function initContent() {
     const aboutImageWrapper = document.querySelector('.about-image-wrapper');
     if (aboutImageWrapper) {
         const borderDiv = '<div class="about-image-border"></div>';
-        const imgTag = `<img src="${siteContent.about.image}" alt="Adithyan M Tech Content Creator SnapBlitz" class="about-image" fetchpriority="high" loading="lazy" decoding="async" width="400" height="500" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:2;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
+        const imgTag = `<img src="${siteContent.about.image}" alt="Adithyan M — Tech Content Creator (SnapBlitz) from Kerala, India" class="about-image" loading="lazy" decoding="async" width="400" height="500" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:2;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
         // Fallback placeholder if image fails to load or isn't present
         const placeholderDiv = `<div class="about-image placeholder" style="display:none;"><span>Replace with your photo</span></div>`;
         
